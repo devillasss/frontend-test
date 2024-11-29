@@ -1,5 +1,10 @@
 version: 2.1
 
+executors:
+  amazon-linux-executor:
+    docker:
+      - image: amazonlinux:2 
+
 workflows:
   testing:
     jobs:
@@ -24,8 +29,8 @@ jobs:
       - run:
           name: Install Node.js and npm
           command: |
-            curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-            apt-get install -y nodejs
+            curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
+            yum install -y nodejs
       - run:
           name: Install Dependencies
           command: npm install
