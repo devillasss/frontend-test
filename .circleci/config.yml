@@ -4,8 +4,32 @@ workflows:
     jobs:
       - runner-test
 
+jobs:
+  runner-test:
+    machine: true
+    resource_class: devillasss/circle
+    steps:
+      - run: echo "Hi I'm on Runners!"
 
 jobs:
+  runner-test:
+    machine: true
+    resource_class: devillasss/circle
+    steps:
+      - run: echo "Hi I'm on Runners!"
+      
+  runner-build-test:
+    machine: true
+    resource_class: devillasss/circle
+     steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: run build
+          command: npm build
+
   build:
     docker:
       - image: cimg/node:20
