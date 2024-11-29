@@ -25,7 +25,6 @@ jobs:
     machine: true
     resource_class: devillasss/circle
      steps:
-      - checkout
       - run:
           name: Install Dependencies
           command: npm install
