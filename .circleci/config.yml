@@ -3,6 +3,8 @@ workflows:
   testing:
     jobs:
       - runner-test
+      - runner-build-test
+      - build
 
 jobs:
   runner-test:
@@ -17,7 +19,7 @@ jobs:
     resource_class: devillasss/circle
     steps:
       - run: echo "Hi I'm on Runners!"
-      
+
   runner-build-test:
     machine: true
     resource_class: devillasss/circle
