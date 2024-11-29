@@ -7,6 +7,9 @@ workflows:
       - runner-build-test
       - build
 
+orbs:
+  node: circleci/node@5.0.2
+
 jobs:
   runner-test:
     machine: true
@@ -25,6 +28,7 @@ jobs:
     machine: true
     resource_class: devillasss/circle
      steps:
+      - checkout:
       - run:
           name: Install Dependencies
           command: npm install

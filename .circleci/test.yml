@@ -1,0 +1,9 @@
+version: 2.1
+
+
+jobs:
+  runner-test:
+    machine: true
+    resource_class: devillasss/circle
+    steps:
+      - run: echo "Hi I'm on Runners!"
