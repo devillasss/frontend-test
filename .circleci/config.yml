@@ -1,4 +1,5 @@
 version: 2.1
+
 workflows:
   testing:
     jobs:
@@ -32,23 +33,17 @@ jobs:
           name: run build
           command: npm build
 
-  build:
-    docker:
-      - image: cimg/node:20
-    steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Run Tests
-          command: npm start
-      - run:
-          name: run build
-          command: npm build
-
-# workflows:
-#   version: 2
-#   build_and_test:
-#     jobs:
-#       - build
+  # build:
+  #   docker:
+  #     - image: cimg/node:20
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Install Dependencies
+  #         command: npm install
+  #     - run:
+  #         name: Run Tests
+  #         command: npm start
+  #     - run:
+  #         name: run build
+  #         command: npm build
