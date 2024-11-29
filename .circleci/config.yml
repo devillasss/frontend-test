@@ -30,7 +30,7 @@ jobs:
           name: Install Node.js and npm
           command: |
             curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
-            yum install -y nodejs
+            sudo yum install -y nodejs
       - run:
           name: Install Dependencies
           command: npm install
